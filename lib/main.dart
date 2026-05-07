@@ -12,28 +12,44 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'S1 activa 2',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomePage(),
+
+      // Título personalizado de la aplicación
+      title: 'Perfil Universitario Angel',
+
+      // Tema general de la app
+      theme: ThemeData(
+        useMaterial3: true,
+
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          primary: Colors.deepPurple,
+          secondary: Colors.amber,
+        ),
+
+        scaffoldBackgroundColor: const Color(0xFFF5F3FA),
+
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 16,
+            color: Colors.black87,
+          ),
+        ),
+
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurple,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          ),
+        ),
+      ),
+
+      home: const HomePage(),
     );
   }
 }
-
-/*class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Mi primer app'),
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
-      ),
-
-      body: Center(
-        child: Text('Hola mundo!!')
-      ) ,
-    );
-  }
-}*/
